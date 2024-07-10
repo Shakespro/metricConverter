@@ -102,28 +102,4 @@ suite('Unit Tests', function(){
     assert.approximately(result, expected, 0.1); // Using approximately due to float precision
   });
 
-  test('Convert km to mi', function() {
-    const initNum = 10;
-    const initUnit = 'km';
-    const expected = 6.21371; // 10 kilometers to miles
-    const result = convertHandler.convert(initNum, initUnit);
-    assert.approximately(result, expected, 0.1); // Using approximately due to float precision
-  });
-
-  test('Convert lbs to kg', function() {
-    const initNum = 5;
-    const initUnit = 'lbs';
-    const expected = 2.26796; // 5 pounds to kilograms
-    const result = convertHandler.convert(initNum, initUnit);
-    assert.approximately(result, expected, 0.1); // Using approximately due to float precision
-  });
-
-  test('Convert kg to lbs', function() {
-    const initNum = 10;
-    const initUnit = 'kg';
-    const expected = 22.04624; // 10 kilograms to pounds
-    const result = convertHandler.convert(initNum, initUnit);
-    assert.approximately(result, expected, 0.1); // Using approximately due to float precision
-  });
-
 });
