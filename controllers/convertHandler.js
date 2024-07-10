@@ -1,10 +1,18 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    const regex = /^[0-9/.]+/;
+    const regex = /^([0-9]+(\.[0-9]+)?\/[0-9]+(\.[0-9]+)?|[0-9]+(\.[0-9]+)?)$/;
     let result = input.match(regex);
 
-    return result ? eval(result[0]) : 1;
+    if (!result) return 1; // Default to 1 if no number is provided
+    
+    // Handle fractional and decimal inputs
+    if (result[0].includes('/')) {
+      let [num1, num2] = result[0].split('/');
+      return parseFloat(num1) / parseFloat(num2);
+    } else {
+      return parseFloat(result[0]);
+    }
   };
   
   this.getUnit = function(input) {
